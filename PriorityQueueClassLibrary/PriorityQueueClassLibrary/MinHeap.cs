@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace PriorityQueueClassLibrary
 {
+    /// <summary>
+    /// A dynamically sized minheap
+    /// </summary>
     public class MinHeap<T> : IHeap<T>
     {
         private const int DEFAULT_CAPACITY = 1;
@@ -20,7 +23,7 @@ namespace PriorityQueueClassLibrary
 
         public int Count => _count;
         public int Capacity => _capacity;
-        public bool IsReadOnly => false;
+        public bool IsEmpty => _count <= 0;
 
         public MinHeap(Func<T, T, int> comparer, int initialCapacity = DEFAULT_CAPACITY)
         {
@@ -45,9 +48,7 @@ namespace PriorityQueueClassLibrary
             _count = 0;
 
             //add items from the input collection
-            foreach(T item in items) {
-                Add(item);
-            }
+            AddAll(items);
         }
 
         public void Clear()
@@ -59,13 +60,25 @@ namespace PriorityQueueClassLibrary
 
         public void Add(T item)
         {
+            if (item == null) throw new ArgumentNullException("item");
+
             //increase size of array if necessary
             Grow();
 
             //insert new item at end and then move it up
-            _heap[_capacity] = item;
-            BubbleUp(_capacity);
-            _capacity++;
+            _heap[_count] = item;
+            BubbleUp(_count);
+            _count++;
+        }
+
+        public void AddAll(IEnumerable<T> items)
+        {
+            foreach (T item in items) Add(item); 
+        }
+
+        public void AddAll(params T[] items)
+        {
+            foreach (T item in items) Add(item);
         }
 
         public T RemoveFirst()
@@ -212,5 +225,7 @@ namespace PriorityQueueClassLibrary
             if (_comparer(_heap[i], _heap[j]) <= 0) return i;
             else return j;
         }
+
+
     }
 }

@@ -19,9 +19,43 @@ namespace PriorityQueueClassLibrary
         /// </summary>
         T RemoveFirst();
 
+        /// <summary>
+        /// Clears all items from the heap
+        /// </summary>
+        void Clear();
 
+        /// <summary>
+        /// Adds and item to the heap
+        /// </summary>
+        /// <param name="item">The item to be added</param>
+        /// <exception cref="ArgumentNullException">Does not allow addinf of null values</exception>
+        void Add(T item);
 
+        /// <summary>
+        /// Adds multiple elements to the heap
+        /// </summary>
+        /// <param name="items">The items to be added</param>
+        void AddAll(IEnumerable<T> items);
 
+        /// <summary>
+        /// Adds multiple elements to the heap
+        /// </summary>
+        /// <param name="items">The items to be added</param>
+        void AddAll(params T[] items);
 
+        /// <summary>
+        /// The number of elements in the heap
+        /// </summary>
+        int Count { get; }
+
+        /// <summary>
+        /// The maximum capacity of the heap
+        /// </summary>
+        int Capacity { get; }
+
+        /// <summary>
+        /// Whether or not the heap is empty
+        /// </summary>
+        bool IsEmpty { get; }
     }
 }
