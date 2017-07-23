@@ -96,10 +96,12 @@ namespace PriorityQueueClassLibrary
             return retval;
         }
 
-        public T First()
+        public T First
         {
-            if (_count == 0) return default(T); //TODO throw exception? for value types
-            return _heap[0];
+            get {
+                if (_count == 0) return default(T); //TODO throw exception? for value types
+                return _heap[0];
+            }
         }
 
         public IEnumerator<T> GetEnumerator()

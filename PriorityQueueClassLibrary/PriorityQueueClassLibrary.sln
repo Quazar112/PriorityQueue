@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriorityQueueClassLibrary", "PriorityQueueClassLibrary\PriorityQueueClassLibrary.csproj", "{DE80B0B6-B4A7-4CD2-B1A0-6D81E097FE0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriorityQueueTests", "PriorityQueueTests\PriorityQueueTests.csproj", "{C013DB5A-98F8-4BC1-B338-CF2443198736}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriorityQueueCLTests", "PriorityQueueTests\PriorityQueueCLTests.csproj", "{C013DB5A-98F8-4BC1-B338-CF2443198736}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

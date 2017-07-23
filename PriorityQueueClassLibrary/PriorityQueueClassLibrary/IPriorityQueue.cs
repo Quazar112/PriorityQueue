@@ -9,16 +9,35 @@ namespace PriorityQueueClassLibrary
     public interface IPriorityQueue<T> : IEnumerable<T>
     {
         /// <summary>
-        /// Enqueues 
+        /// Adds an item to the queue at the appropriate position with the given priority
         /// </summary>
-        /// <param name="item"></param>
-        void Enqueue(T item);
+        void Enqueue(T item, int priority);
+
+        /// <summary>
+        /// Removes and returns the first item in the queue
+        /// </summary>
         T Dequeue();
-        T First();
+
+        /// <summary>
+        /// Finds the first item in the queue
+        /// </summary>
+        T First { get; }
+
+        /// <summary>
+        /// Clears the queue
+        /// </summary>
         void Clear();
 
+        /// <summary>
+        /// The number of items in the queue
+        /// </summary>
         int Count { get; }
 
-        //TODO to list, array? are these in IEnumerable?
+        /// <summary>
+        /// The maximum number of items that can currently be stored (
+        /// </summary>
+        int Capacity { get; }
+
+        //TODO to list, array? 
     }
 }

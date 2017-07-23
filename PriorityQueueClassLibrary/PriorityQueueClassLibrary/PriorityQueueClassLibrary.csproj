@@ -43,6 +43,8 @@
     <Compile Include="Heap\MinHeap.cs" />
     <Compile Include="Heap\IHeap.cs" />
     <Compile Include="IPriorityQueue.cs" />
+    <Compile Include="PriorityNode.cs" />
+    <Compile Include="PriorityQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -19,12 +19,12 @@ namespace PriorityQueueTests
 
             minHeap.Add(3);
             Assert.AreEqual(minHeap.Count, 1);
-            Assert.AreEqual(minHeap.First(), 3);
+            Assert.AreEqual(minHeap.First, 3);
             Assert.IsFalse(minHeap.IsEmpty);
 
             minHeap.Add(2);
             Assert.AreEqual(minHeap.Count, 2);
-            Assert.AreEqual(minHeap.First(), 2);
+            Assert.AreEqual(minHeap.First, 2);
             Assert.AreEqual(minHeap.Capacity, 2);
 
             minHeap.Add(4);
@@ -35,7 +35,7 @@ namespace PriorityQueueTests
             minHeap.Add(5);
             Assert.AreEqual(minHeap.Count, 5);
             Assert.IsTrue(minHeap.Capacity >= 5);
-            Assert.AreEqual(minHeap.First(), 1);
+            Assert.AreEqual(minHeap.First, 1);
             Assert.AreEqual(minHeap.RemoveFirst(), 1);
             Assert.AreEqual(minHeap.Count, 4);
             Assert.AreEqual(minHeap.RemoveFirst(), 2);
@@ -64,7 +64,7 @@ namespace PriorityQueueTests
             mh.AddAll(new int[] { 4, 3, 2, 1, 0 });
             Assert.IsFalse(mh.IsEmpty);
             Assert.AreEqual(mh.Count, 5);
-            Assert.AreEqual(mh.First(), 0);
+            Assert.AreEqual(mh.First, 0);
 
             mh.Clear();
             Assert.IsTrue(mh.IsEmpty);
@@ -92,6 +92,34 @@ namespace PriorityQueueTests
                 var mh = new MinHeap<Object>((a, b) => 1);
                 mh.Add(null);
             });
+        }
+
+        private class Node
+        {
+            public int n { get; set; }
+            public static Func<Node, Node, int> Comparer = (a, b) => (a.n - b.n);
+            public Node(int n)
+            {
+                this.n = n;
+            }
+        }
+
+        [TestMethod]
+        public void TestReferenceType()
+        {
+            MinHeap<Node> mh = new MinHeap<Node>(Node.Comparer);
+            mh.Add(new Node(3));
+            Assert.AreEqual(mh.First.n, 3);
+            Assert.AreEqual(mh.Count, 1);
+            mh.AddAll(new Node[] { new Node(1), new Node(4), new Node(0) });
+            Assert.AreEqual(mh.Count, 4);
+            Assert.AreEqual(mh.RemoveFirst().n, 0);
+            Assert.AreEqual(mh.RemoveFirst().n, 1);
+            Assert.AreEqual(mh.First.n, 3);
+            Assert.AreEqual(mh.Count, 2);
+            mh.Clear();
+            Assert.AreEqual(mh.Count, 0);
+            Assert.IsNull(mh.First);
         }
     }
 }

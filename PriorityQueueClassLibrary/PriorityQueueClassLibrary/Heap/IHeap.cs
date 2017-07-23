@@ -11,8 +11,7 @@ namespace PriorityQueueClassLibrary
         /// <summary>
         /// Finds the first item in the heap
         /// </summary>
-        /// <returns>The first item in the heap</returns>
-        T First();
+        T First { get; }
 
         /// <summary>
         /// Removes and returns the first element in the heap
