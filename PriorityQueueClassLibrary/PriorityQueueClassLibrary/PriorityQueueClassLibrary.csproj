@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MinHeap.cs" />
-    <Compile Include="IHeap.cs" />
+    <Compile Include="Heap\MinHeap.cs" />
+    <Compile Include="Heap\IHeap.cs" />
     <Compile Include="IPriorityQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
