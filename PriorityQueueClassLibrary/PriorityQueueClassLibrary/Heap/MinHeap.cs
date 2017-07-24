@@ -104,16 +104,6 @@ namespace PriorityQueueClassLibrary
             }
         }
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Moves an item up in the heap until it is properly ordered
         /// </summary>

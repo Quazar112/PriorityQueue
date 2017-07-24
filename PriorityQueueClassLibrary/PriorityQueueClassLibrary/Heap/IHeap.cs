@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PriorityQueueClassLibrary
 {
-    interface IHeap<T> : IEnumerable<T>
+    interface IHeap<T>
     {
         /// <summary>
         /// Finds the first item in the heap

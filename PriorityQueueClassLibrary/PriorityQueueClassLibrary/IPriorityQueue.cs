@@ -38,6 +38,8 @@ namespace PriorityQueueClassLibrary
         /// </summary>
         int Capacity { get; }
 
+        bool IsEmpty { get; }
+
         //TODO to list, array? 
     }
 }
