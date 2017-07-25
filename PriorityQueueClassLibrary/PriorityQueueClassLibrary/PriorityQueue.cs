@@ -32,7 +32,7 @@ namespace PriorityQueueClassLibrary
             return _queue.RemoveFirst().Item;
         }
 
-        public void Enqueue(T item, int priority)
+        public void Enqueue(T item, float priority)
         {
             _queue.Add(new PriorityNode<T>(item, priority));
         }

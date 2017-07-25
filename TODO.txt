@@ -3,7 +3,7 @@ Make heap threadsafe (or make threadsafe wrapper for queue) so can parallelize
 Add replace to heap/queue (replaces first with new element) (more efficient; only need to balance once)
 Return value/exceptions when empty?
 Make preserve FIFO order (either store timestamp or keep index of when added) (make separate version)
-
+Implement IEnummerable and/or ICollection? Will simplify making threadsafe because can use BlockingCollection
 
 
 

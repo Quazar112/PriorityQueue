@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PriorityQueueClassLibrary
 {
-    public interface IPriorityQueue<T> : IEnumerable<T>
+    public interface IPriorityQueue<T>
     {
         /// <summary>
         /// Adds an item to the queue at the appropriate position with the given priority
         /// </summary>
-        void Enqueue(T item, int priority);
+        void Enqueue(T item, float priority);
 
         /// <summary>
         /// Removes and returns the first item in the queue
